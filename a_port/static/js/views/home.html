@@ -1,0 +1,15 @@
+<h2>Users</h2>
+<div ng-repeat="user in users">
+    <a href="#/user/{{ user.id }}"><p>{{ user.username }}</p></a>
+    <p>{{ user.email }}</p>
+</div>
+<h2>Projects</h2>
+<div ng-repeat="project in projects">
+    <p>{{ project.title }}</p>
+    <p>{{ project.description }}</p>
+</div>
+<h4>Default</h4>
+    <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+<h2>Get User by First Name</h2>
+<input ng-model="first" />
+<a href="#/filterUser/{{ first }}"><button ng-click="findFirst();">Find User</button></a>
