@@ -22,7 +22,7 @@ function homeController($scope, $http) {
             console.log(error);
         });
 //    workaround for the bootstrap. real amount of items + 10
-$scope.totalItems = $scope.count + 10 ;
+$scope.totalItems = $scope.count + 10;
 $scope.currentPage = 1;
 $scope.setPage = function (pageNo) {
 $scope.currentPage = pageNo;
