@@ -1,4 +1,7 @@
-var a_port = angular.module('a_port', ['ngRoute', 'ngResource', 'ngSanitize', 'ui.bootstrap']);
+var a_port = angular.module('a_port', ['ngRoute', 'ngResource', 'ngSanitize', 'ui.bootstrap', 'ngCookies']).run(function($http, $cookies){
+    $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
+//    may have to do .put and .patch
+});
 a_port.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
         when('/', {templateUrl: '/static/js/views/home.html', controller: homeController}).

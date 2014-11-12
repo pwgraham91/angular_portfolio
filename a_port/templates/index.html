@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load djangular_tags %}
 
 <!DOCTYPE html>
 <html>
@@ -30,20 +31,23 @@
     <!------ Filters ---->
 
     <!------ Directives ---->
+    <script src="{% static "js/directives/navbarDirective.js" %}"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="{% static "css/index.css" %}">
-
+<script>
+    var logged_username = "{{ logged_user.username }}";
+    var logged_userID = "{{ logged_user.id }}"
+</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-cookies.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="row" ng-app="a_port">
-
+    <div class="row" ng-app="a_port">
+        <navbar-a></navbar-a>
+        <div class="container">
             <div class="col-md-12" ng-view>
-
-            </div>
         </div>
-
+        </div>
     </div>
 </body>
 </html>

@@ -9,7 +9,7 @@ router.register(r'projects', ProjectViewSet, base_name='projects')
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include(router.urls)), # Include router urls into our urlpatterns
+    url(r'^api/', include(router.urls)), # Include router urls into our urlpatterns
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^ang/', 'a_port.views.index', name="index"),
+    url(r'^$', 'a_port.views.index', name="index"),
 )

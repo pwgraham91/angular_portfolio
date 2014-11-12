@@ -1,1 +1,4 @@
-<h1>filter User</h1>
+<h1>Users with first name: {{ first }}</h1>
+<div ng-repeat="name in users">
+    <a href="#/user/{{ name.id }}"><p>{{ name.first_name }} {{ name.last_name }}</p></a>
+</div>

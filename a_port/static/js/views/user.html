@@ -1,3 +1,9 @@
 <h1>{{ user.username }}</h1>
 <h2>{{ user.email }}</h2>
 <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+<h2>Projects</h2>
+<div ng-repeat="project in projects">
+    <h3>{{ project.title }}</h3>
+    <p>{{ project.description }}</p>
+</div>
+<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
